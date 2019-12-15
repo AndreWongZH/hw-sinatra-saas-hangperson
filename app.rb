@@ -42,7 +42,7 @@ class HangpersonApp < Sinatra::Base
 		### YOUR CODE HERE ###
 		if @game.guess(letter) == ArgumentError
 			flash[:message] = "Invalid Guess."
-		elsif not @game.guess(letter)
+		elsif @game.guess(letter) == false
 			flash[:message] = "You have already used that letter."
 		end
 		redirect '/show'
